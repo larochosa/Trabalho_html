@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: rgb(9, 77, 146);">Cadastro </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: rgb(8, 136, 158);">Página inicial</a></li>
+                <li><a href="meus_hobbies_ou_interesses.html" style="color: rgb(8, 136, 158);">Hobbies</a></li>
+                <li><a href="sobre_mim.html" style="color: rgb(8, 136, 158);">Informações</a></li>
+                <li><a href="receitas.html" style="color: rgb(8, 136, 158);">Receitas</a></li>
+                <li><a href="README.md" style="color: rgb(8, 136, 158);">README.md</a></li>
+                <li><a href="contato.html" style="color: rgb(8, 136, 158);">Contato</a></li>
+            </ul>
+        </nav>
+        <img src="https://i.pinimg.com/736x/d8/ee/b4/d8eeb4dbabb849a31682a6d2d6006b0c.jpg" alt="100" width="350">
+        <form action="cadastro.html" method="POST">
+            <label for="nome" style="color: rgb(82, 82, 172);">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br><br>
+
+
+            <label for="email" style="color: rgb(82, 82, 172);">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seu-email@exemplo.com" required><br><br>
+
+
+            <label for="senha" style="color: rgb(82, 82, 172);">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required><br><br>
+
+
+            <label for="data" style="color: rgb(82, 82, 172);">Data de nascimento:</label>
+            <input type="date" id="data" name="datanascimento" placeholder="dd/mm/yyyy" required><br><br>
+
+
+            <label for="telefone" style="color: rgb(82, 82, 172);">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required><br><br>
+
+
+            <label for="gênero" style="color: rgb(82, 82, 172);">Gênero:</label><br><br>
+            <input type="checkbox" id="gen1" name="gen1" value="Feminino" required>
+            <label for="gen1"> Feminino</label><br>
+            <input type="checkbox" id="gen2" name="gen2" value="Masculino" required>
+            <label for="gen2"> Masculino</label><br>
+            <input type="checkbox" id="gen3" name="gen3" value="Neutro" required>
+            <label for="gen3"> Prefiro não dizer</label><br>
+
+
+            <label for="interesse">Interesses:</label>
+            <input type="checkbox" id="interesses" name="interesses" placeholder="Seus interesses" required><br><br>
+
+
+            <label for="cidade" style="color: rgb(82, 82, 172);">Cidade:</label>
+            <input type="select" id="cidade" name="cidade" placeholder="Sua cidade" required><br><br>
+
+
+            <label for="comentarios" style="color: rgb(82, 82, 172);">Comentários adicionais:</label>
+            <input type="textrea" id="comentario" name="comentario" placeholder="comentarios adicionais"
+                required><br><br>
+
+
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+
+
+        </form>
+    </div>
+    <footer>
+        <p>Laura - 2º inf 01 - informática</p>
+    </footer
