@@ -1,0 +1,341 @@
+:root {
+  --azul-noite: #0e273c;
+  --fundo-claro: #d9edf7;   /* antes era lilás, agora azul claro */
+  --azul-medio: #a9d4ea;
+  --roxo: #4a306d;
+  --roxo-claro: #6b4694;
+  --branco: #ffffff;
+  --texto-claro: #f3edf2;
+
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-texto: 'Poppins', sans-serif;
+
+  --raio: 14px;
+  --sombra: 0 8px 24px rgba(14, 39, 60, 0.18);
+  --transicao: 0.3s ease;
+}
+
+/* ---------- Transição suave entre páginas (navegador com suporte, ex: Chrome/Edge) ---------- */
+@view-transition {
+  navigation: auto;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fundo-claro);
+  color: var(--azul-noite);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--raio);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--roxo);
+  margin-top: 0;
+}
+
+/* ---------- Container geral ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  background-color: var(--azul-noite);
+  padding: 30px 20px 20px;
+  text-align: center;
+  border-bottom: 5px solid var(--roxo);
+}
+
+.cabecalho h1 {
+  color: var(--texto-claro);
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* ---------- Navegação ---------- */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  color: var(--texto-claro);
+  background-color: var(--roxo);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+.menu li a:hover {
+  background-color: var(--roxo-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 39, 60, 0.25);
+}
+
+.menu li a.ativo,
+.menu li a[aria-current="page"] {
+  background-color: var(--roxo-claro);
+  box-shadow: 0 0 0 2px var(--texto-claro) inset;
+}
+
+/* ---------- Conteúdo principal ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+/* Animação de entrada suave (fallback para navegadores sem View Transitions) */
+@keyframes entradaSuave {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main,
+.secao {
+  animation: entradaSuave 0.45s ease both;
+}
+
+.secao:nth-of-type(1) { animation-delay: 0s; }
+.secao:nth-of-type(2) { animation-delay: 0.08s; }
+.secao:nth-of-type(3) { animation-delay: 0.16s; }
+.secao:nth-of-type(4) { animation-delay: 0.24s; }
+.secao:nth-of-type(5) { animation-delay: 0.32s; }
+
+.secao {
+  background-color: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  transition: box-shadow var(--transicao), transform var(--transicao);
+}
+
+.secao:hover {
+  box-shadow: 0 12px 28px rgba(14, 39, 60, 0.22);
+}
+
+.secao img {
+  display: block;
+  margin: 15px auto;
+}
+
+.centralizado {
+  text-align: center;
+}
+
+/* ---------- Imagens em destaque (sempre centralizadas) ---------- */
+.imagem-destaque {
+  display: block;
+  margin: 20px auto;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao);
+}
+
+.imagem-destaque:hover {
+  transform: scale(1.02);
+}
+
+/* Galeria de duas imagens lado a lado (usada em hobbies) */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 15px 0;
+}
+
+.galeria img {
+  margin: 0;
+}
+
+/* ---------- Listas de hobbies / filmes / músicas ---------- */
+.lista-info {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-info li {
+  background-color: var(--fundo-claro);
+  border-left: 5px solid var(--roxo);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: transform var(--transicao), background-color var(--transicao);
+}
+
+.lista-info li:hover {
+  transform: translateX(4px);
+  background-color: var(--azul-medio);
+}
+
+/* ---------- Cartões de receitas ---------- */
+.receita {
+  border: 1px solid var(--azul-medio);
+}
+
+.receita h2 {
+  border-bottom: 2px solid var(--azul-medio);
+  padding-bottom: 8px;
+}
+
+.receita ul {
+  columns: 2;
+  column-gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .receita ul {
+    columns: 1;
+  }
+}
+
+/* ---------- Formulários ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  color: var(--roxo);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 10px 12px;
+  border: 2px solid var(--azul-medio);
+  border-radius: 8px;
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  color: var(--azul-noite);
+  background-color: #fbf9fb;
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 3px rgba(74, 48, 109, 0.15);
+}
+
+.grupo-checkbox {
+  margin: 6px 0 14px;
+}
+
+.opcao-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  color: var(--azul-noite);
+  margin-top: 0;
+}
+
+.botoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--fonte-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 30px;
+  transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+button[type="submit"] {
+  background-color: var(--roxo);
+  color: var(--texto-claro);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--roxo-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 39, 60, 0.25);
+}
+
+button[type="reset"] {
+  background-color: transparent;
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+}
+
+button[type="reset"]:hover {
+  background-color: var(--fundo-claro);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  background-color: var(--azul-noite);
+  color: var(--texto-claro);
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  main,
+  .secao {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

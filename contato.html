@@ -1,48 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 style="color: rgb(42, 95, 148);">Contato </h1>
-    <nav>
-        <ul>
-            <li><a href="index.html" style="color: rgb(8, 136, 158);">Página inicial</a></li>
-            <li><a href="meus_hobbies_ou_interesses.html" style="color: rgb(8, 136, 158);">Hobbies</a></li>
-            <li><a href="sobre_mim.html" style="color: rgb(8, 136, 158);">Informações</a></li>
-            <li><a href="receitas.html" style="color: rgb(8, 136, 158);">Receitas</a></li>
-            <li><a href="README.md" style="color: rgb(8, 136, 158);">README.md</a></li>
-            <li><a href="cadastro.html" style="color: rgb(8, 136, 158);">Cadastro</a></li>
-        </ul>
-    </nav>
+    <header class="cabecalho">
+        <h1>Contato</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Página inicial</a></li>
+                <li><a href="meus_hobbies_ou_interesses.html">Hobbies</a></li>
+                <li><a href="sobre_mim.html">Informações</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="README.md">README.md</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <article>
-            <img src="https://i.pinimg.com/1200x/ef/cf/43/efcf4316856b6262eb0da7f3d529e4d7.jpg" alt="100" width="320">
+        <section class="secao centralizado">
+            <img class="imagem-destaque"
+                src="https://i.pinimg.com/1200x/35/46/b0/3546b0fa11f3d9a09d51d0c84a043c70.jpg"
+                alt="100" width="500">
+
             <form action="contato.html" method="POST">
-                <label for="nome" style="color: rgb(82, 82, 172);">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
 
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="email" style="color: rgb(82, 82, 172);">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-
-                <label for="mensagem" style="color: rgb(82, 82, 172);">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
-
-
-                <button type="submit">Enviar</button>
+                <div class="botoes">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
-        </article>
+        </section>
     </main>
 
+    <footer>
+        <p>Laura - 2º inf 01 - informática</p>
+    </footer>
 </body>
 
 </html>
-<footer>
-    <p>Laura - 2º inf 01 - informática</p>
-</footer
